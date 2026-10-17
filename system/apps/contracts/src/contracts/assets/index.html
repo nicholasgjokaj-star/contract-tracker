@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contracts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <div class="mark"><i data-lucide="file-signature" style="width:17px;height:17px"></i></div>
+      <div>
+        <div class="name">Contracts</div>
+        <div class="sub">Contract register</div>
+      </div>
+    </div>
+    <div class="nav active" data-goto="search"><i data-lucide="search"></i> <span>Search contracts</span></div>
+    <div class="nav" data-goto="upload"><i data-lucide="upload-cloud"></i> <span>Upload contract</span></div>
+    <div class="spacer"></div>
+    <div class="nav" id="syncBtn" onclick="syncNotion()"><i data-lucide="refresh-cw"></i> <span>Sync to Notion</span></div>
+    <div class="foot" id="foot">Loading…</div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <h1 id="pageTitle">Search contracts</h1>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span id="whoami" class="mockflag" onclick="setName()" title="Click to change who you are" style="cursor:pointer"></span>
+        <button class="btn primary" data-goto="upload"><i data-lucide="plus"></i> New contract</button>
+      </div>
+    </div>
+    <div class="content">
+
+      <!-- ============ SEARCH ============ -->
+      <section class="view active" id="view-search">
+        <div class="filters">
+          <div class="search"><i data-lucide="search"></i><input id="q" placeholder="Search by party, description, keyword…" oninput="renderRows()"></div>
+          <select id="fDept" onchange="renderRows()"><option value="">All departments</option></select>
+          <select id="fStatus" onchange="renderRows()"><option value="">Any status</option><option>Active</option><option>Terminated</option></select>
+          <div class="multi" id="ownerFilter"></div>
+          <div class="multi" id="tagFilter"></div>
+        </div>
+        <div class="legend">
+          <span><i data-lucide="calculator"></i> Calculated from the contract</span>
+          <span class="g"><i data-lucide="sparkles"></i> AI best guess</span>
+          <span class="g"><i data-lucide="pencil"></i> Set manually</span>
+        </div>
+        <p class="count" id="count"></p>
+        <div id="tableHost"></div>
+      </section>
+
+      <!-- ============ PROFILE ============ -->
+      <section class="view" id="view-profile">
+        <div class="back" data-goto="search"><i data-lucide="arrow-left"></i> Back to search</div>
+        <div id="profileHost"></div>
+      </section>
+
+      <!-- ============ UPLOAD ============ -->
+      <section class="view" id="view-upload">
+        <div class="uploadwrap">
+          <div class="drop" id="drop">
+            <i data-lucide="upload-cloud"></i>
+            <div class="big">Drop a contract here, or click to browse</div>
+            <div class="small">PDF or text document · the original is kept in the system and viewable anytime</div>
+            <div class="fname" id="fname"></div>
+          </div>
+          <input type="file" id="fileInput" accept=".pdf,.txt,.md" style="display:none">
+          <div class="formrow">
+            <div>
+              <label>Owner</label>
+              <input id="owner" placeholder="Who owns this contract?">
+            </div>
+            <div>
+              <label>Department</label>
+              <select id="uDept"><option value="">Select department…</option></select>
+            </div>
+          </div>
+          <div style="margin-top:16px">
+            <label style="display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px">Tags (optional)</label>
+            <div class="tagsbar" id="uploadTags"></div>
+          </div>
+          <div class="hint"><i data-lucide="info"></i> <span id="driveHint">Checking Google Drive connection…</span></div>
+          <div class="analyze">
+            <button class="btn primary" id="analyzeBtn" onclick="runAnalyze()"><i data-lucide="sparkles"></i> Analyze &amp; add contract</button>
+          </div>
+          <div class="result" id="result"><div class="rb" id="resultBody"></div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><i data-lucide="check-circle-2"></i> <span id="toastMsg">Done</span></div>
+<script src="app.js"></script>
+</body>
+</html>

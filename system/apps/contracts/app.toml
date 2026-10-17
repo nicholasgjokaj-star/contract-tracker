@@ -1,0 +1,5 @@
+name = "contracts"
+display_name = "Contracts"
+icon = "icon.svg"
+priority = "user"
+program = "contracts"

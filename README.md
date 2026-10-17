@@ -1,52 +1,62 @@
-# Your workspace
+<p align="center">
+  <img alt="Contract Tracker" src="template.svg" width="480">
+</p>
 
-This folder is your agent's home: everything it knows, everything it builds,
-and the machinery that keeps it running.
+# Contract Tracker
 
-## Creations
+<p align="center">
+  <a href="https://studio.imbue.com/open?git_url=https://github.com/nicholasgjokaj-star/contract-tracker"><img alt="Open in Imbue Studio" height="64" src="https://img.shields.io/badge/Open%20in%20Imbue%20Studio-D8D1C0?style=for-the-badge"></a>
+</p>
 
-Broadly, in Imbue Studio you make "creations". These can be "code" (apps, skills, and
-the services behind them) or "data" (documents, images, notes).
+Didn't work? Create a Studio workspace and paste this to your agent:
+` /use-template https://github.com/nicholasgjokaj-star/contract-tracker`
 
-Imbue Studio makes this easier by defining some conventions for the common things
-you'll want to make:
+## Why you care
 
-1. an "app" - something you can open as a tab and interact with
-2. a "skill" - teaches your agent how to do work you care about. A skill that
-   is automatically run on a schedule is called an "automation" (the
-   machinery that runs them lives in `system/libs/automations/`; the weekly
-   Caretaker is the built-in example)
-3. some "data" - documents, images, notes, or data created by your apps and
-   skills
-4. some "customizations" - changes to any of the above. Everything in Imbue Studio
-   can be modified by you!
+Upload contracts, let Claude extract the key terms, then organize, search and tag them, with optional Dropbox and Notion sync.
 
-## What's here
+Signed contracts tend to scatter across inboxes, shared drives and folders, and the
+details that matter -- who it's with, when it ends, what it's worth -- stay locked
+inside PDFs. Contract Tracker gives you one searchable register: drop in a contract
+and Claude reads it for you, so renewal dates and obligations stop slipping by.
 
-- `apps/` - Everything you can open as a tab: the built-in apps (chat, the
-  terminal, the file viewer, the browser) and the apps your agent builds for you. (A shortcut
-  to `system/apps/`.)
-- `skills/` - Everything your agent knows how to do: the built-in skills and
-  the ones it has learned for you. (A shortcut to `.agents/skills/`.)
-- `data/` - Your workspace's data: documents and project folders, files
-  you've uploaded, your agent's memories, and each app's stored data.
-- `docs/` - Guides to this workspace: what it is, how it works, and a history
-  of where it came from.
-- `system/` - The machinery that runs the workspace: the apps themselves,
-  background services, scripts, and configuration. You can look around (every
-  folder has a README), and your agent maintains it for you.
+## How to use it
 
-A few housekeeping files live alongside them:
+Open the **Contracts** window on your desktop.
 
-- `README.md` - This file.
-- `CLAUDE.md` - The standing instructions your agent follows.
-- `pyproject.toml` and `uv.lock` - The Python project definition; the tooling
-  requires them at the top level.
+1. **Upload a contract** (PDF or text). AI reads it and fills in the
+   contracting party, agreement type, execution and termination dates,
+   termination terms, estimated value (and whether that value is calculated or
+   a best guess), and a short description.
+2. **Review before saving.** The extracted fields are shown for you to check and
+   correct; pick the department and owner, then save.
+3. **Follow-on documents stay together.** Amendments, addenda and statements of
+   work are automatically recognized as follow-ons and attached to the original
+   agreement's profile instead of becoming separate rows.
+4. **Find anything.** Search across party, description, department and type;
+   filter by department and status (Active / Terminated); add tags and notes.
+5. **Open the original.** Every contract keeps its source file and the raw
+   extracted text, one click from its profile.
+6. **Optional sync.** Mirror the register into a Notion database with one button,
+   and save originals into Dropbox folders named after each counterparty.
 
-## Where things are kept safe
+## Ideas for making it yours
 
-The workspace is a git repository: code and configuration changes are
-committed as your agent works. Everything under `data/` is deliberately kept
-out of git (it can be large, personal, or both) and is protected by the
-workspace's continuous encrypted backup instead, along with the rest of the
-workspace. See `docs/` for details.
+- Add renewal reminders: a weekly note listing contracts that terminate in the
+  next 60 days.
+- Teach the extraction to pull fields you care about -- payment terms, governing
+  law, auto-renewal clauses -- and add them as columns.
+- Swap Dropbox for your own document store, or link each contract to its
+  e-signature envelope.
+- Add a spend view that totals estimated value by department or by year.
+
+## What this is
+
+This repository is a published **Imbue Studio template**: a clean, bootable
+snapshot of what an agent built, ready to adapt into your own. It is NOT the
+generic workspace template -- it is this specific project.
+
+[`template.md`](template.md) is the full manifest -- what it is, how it
+works, what it needs to run, and what to adapt -- with the
+machine-readable half (recipe, requirements, and the environment it needs
+installed) in [`template.toml`](template.toml).

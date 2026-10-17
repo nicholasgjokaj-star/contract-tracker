@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="240" height="160">
+  <title>Contract Tracker</title>
+  <rect width="240" height="160" rx="14" fill="#F4EFE6"/>
+  <!-- contract document -->
+  <g transform="translate(20 22) rotate(-4 38 58)">
+    <rect width="76" height="104" rx="5" fill="#FFFFFF" stroke="#D8CFBF" stroke-width="1.5"/>
+    <rect x="12" y="14" width="40" height="5" rx="2.5" fill="#2F3B52"/>
+    <rect x="12" y="28" width="52" height="3" rx="1.5" fill="#C9C0B0"/>
+    <rect x="12" y="36" width="48" height="3" rx="1.5" fill="#C9C0B0"/>
+    <rect x="12" y="44" width="52" height="3" rx="1.5" fill="#C9C0B0"/>
+    <rect x="12" y="52" width="36" height="3" rx="1.5" fill="#C9C0B0"/>
+    <path d="M12 82 c6 -8 10 6 16 -2 s8 -6 12 0" fill="none" stroke="#2F3B52" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="12" y1="88" x2="46" y2="88" stroke="#C9C0B0" stroke-width="1.2"/>
+    <circle cx="60" cy="84" r="9" fill="#C8553D"/>
+    <circle cx="60" cy="84" r="5.5" fill="none" stroke="#F4EFE6" stroke-width="1.2"/>
+  </g>
+  <!-- register table -->
+  <g transform="translate(108 26)">
+    <rect width="114" height="108" rx="7" fill="#FFFFFF" stroke="#D8CFBF" stroke-width="1.5"/>
+    <rect x="8" y="9" width="98" height="12" rx="6" fill="#EEE8DC"/>
+    <circle cx="16" cy="15" r="3" fill="none" stroke="#7A7366" stroke-width="1.3"/>
+    <line x1="18.2" y1="17.2" x2="20.5" y2="19.5" stroke="#7A7366" stroke-width="1.3" stroke-linecap="round"/>
+    <rect x="25" y="13.5" width="34" height="3" rx="1.5" fill="#C9C0B0"/>
+    <g>
+      <rect x="8" y="31" width="40" height="4" rx="2" fill="#2F3B52"/>
+      <rect x="8" y="39" width="26" height="3" rx="1.5" fill="#C9C0B0"/>
+      <rect x="76" y="31" width="30" height="10" rx="5" fill="#DCEBDD"/>
+      <rect x="81" y="34.5" width="20" height="3" rx="1.5" fill="#3E7D4F"/>
+    </g>
+    <line x1="8" y1="49" x2="106" y2="49" stroke="#EEE8DC" stroke-width="1"/>
+    <g>
+      <rect x="8" y="56" width="48" height="4" rx="2" fill="#2F3B52"/>
+      <rect x="8" y="64" width="30" height="3" rx="1.5" fill="#C9C0B0"/>
+      <rect x="76" y="56" width="30" height="10" rx="5" fill="#DCEBDD"/>
+      <rect x="81" y="59.5" width="20" height="3" rx="1.5" fill="#3E7D4F"/>
+    </g>
+    <line x1="8" y1="74" x2="106" y2="74" stroke="#EEE8DC" stroke-width="1"/>
+    <g>
+      <rect x="8" y="81" width="34" height="4" rx="2" fill="#2F3B52"/>
+      <rect x="8" y="89" width="22" height="3" rx="1.5" fill="#C9C0B0"/>
+      <rect x="76" y="81" width="30" height="10" rx="5" fill="#F1E1D8"/>
+      <rect x="81" y="84.5" width="20" height="3" rx="1.5" fill="#A4472F"/>
+    </g>
+  </g>
+</svg>
